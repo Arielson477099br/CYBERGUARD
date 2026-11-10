@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="same-origin">
+  <title>Ameaças · CYBERGUARD</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◇</span><span>CYBER<span>GUARD</span><small>INTELLIGENCE · DEFENSE · SECURITY</small></span></a><nav class="nav" aria-label="Navegação principal"><a href="index.html">▦ <span>Dashboard</span></a><a href="incidentes.html">◉ <span>Incidentes</span></a><a class="active" href="ameacas.html">⌁ <span>Ameaças</span></a><a href="relatorios.html">▤ <span>Relatórios</span></a><a href="auditoria.html">◷ <span>Auditoria</span></a></nav><div class="sidebar-bottom"><div class="profile"><div class="avatar" id="profileAvatar">CG</div><div><b id="profileName">Usuário</b><small id="profileRole">Validando sessão...</small></div></div><button class="nav-link" id="logoutBtn" type="button">↪ <span>Sair</span></button></div></aside>
+    <main class="main-content"><header class="topbar"><button class="icon-button mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu">☰</button><div class="crumb">Catálogo de ameaças</div></header><section class="page-heading"><div><p class="eyebrow">TAXONOMIA DE RISCO</p><h1>Ameaças digitais</h1><p class="muted">Categorias oficiais cadastradas no banco de dados.</p></div></section><article class="panel"><div id="threatCatalog" class="threat-list"><div class="empty-state">Carregando catálogo...</div></div><p class="hint">As categorias padronizam a triagem. A gravidade deve considerar impacto, exposição e contexto da ocorrência.</p><p class="form-error" id="threatError" role="alert"></p></article><footer>CYBERGUARD <span>Plataforma Inteligente de Cibersegurança</span></footer></main>
+  </div>
+  <script type="module" src="js/threats.js"></script>
+</body>
+</html>

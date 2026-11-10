@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>Incidentes · CYBERGUARD</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◇</span><span>CYBER<span>GUARD</span><small>INTELLIGENCE · DEFENSE · SECURITY</small></span></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">▦ <span>Dashboard</span></a><a class="active" href="incidentes.html">◉ <span>Incidentes</span></a><a href="ameacas.html">⌁ <span>Ameaças</span></a><a href="relatorios.html">▤ <span>Relatórios</span></a><a href="auditoria.html">◷ <span>Auditoria</span></a>
+      </nav>
+      <div class="sidebar-bottom"><div class="profile"><div class="avatar" id="profileAvatar">CG</div><div><b id="profileName">Usuário</b><small id="profileRole">Validando sessão...</small></div></div><button class="nav-link" id="logoutBtn" type="button">↪ <span>Sair</span></button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><button class="icon-button mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu">☰</button><div class="crumb">Central de incidentes</div><div class="top-actions"><span class="live-dot">● Banco de dados conectado</span></div></header>
+      <section class="page-heading"><div><p class="eyebrow">GESTÃO E TRIAGEM</p><h1>Incidentes</h1><p class="muted">Registre, classifique e acompanhe ocorrências de segurança.</p></div></section>
+
+      <article class="panel form-panel" id="incidentFormPanel">
+        <div class="panel-heading"><div><h2>Novo incidente</h2><p class="muted">O status inicial é definido pelo servidor como Aberto.</p></div></div>
+        <form id="incidentForm" class="incident-form" novalidate>
+          <div class="field"><label for="title">Título *</label><input id="title" name="title" maxlength="160" minlength="3" required placeholder="Ex.: Tentativa de phishing por e-mail"></div>
+          <div class="field"><label for="type">Tipo de ameaça *</label><select id="type" name="type" required><option value="">Selecione</option><option>Phishing</option><option>Malware</option><option>Fraude</option><option>Ransomware</option><option>Acesso não autorizado</option><option>Vazamento de dados</option><option>Outro</option></select></div>
+          <div class="field"><label for="severity">Gravidade *</label><select id="severity" name="severity" required><option value="">Selecione</option><option>Baixo</option><option>Médio</option><option>Alto</option><option>Crítico</option></select></div>
+          <div class="field wide"><label for="description">Descrição e evidências *</label><textarea id="description" name="description" rows="4" minlength="10" maxlength="5000" required placeholder="Descreva o que foi observado, a origem, o impacto e as evidências disponíveis."></textarea></div>
+          <div class="form-actions"><button class="button primary" id="createIncidentBtn" type="submit">Registrar incidente</button><button class="button secondary" type="reset">Limpar formulário</button></div>
+          <p class="form-error wide" id="incidentError" role="alert" aria-live="polite"></p>
+          <p class="form-success wide" id="incidentSuccess" role="status" aria-live="polite"></p>
+        </form>
+        <p id="readOnlyNotice" class="hint" hidden>Seu perfil permite consultar os incidentes, mas não criar ou alterar registros.</p>
+      </article>
+
+      <article class="panel table-panel">
+        <div class="panel-heading"><div><h2>Incidentes registrados</h2><p class="muted">Os dados são consultados no banco de dados, não no armazenamento local do navegador.</p></div></div>
+        <div class="filters"><input id="searchIncident" type="search" maxlength="100" placeholder="Pesquisar título, descrição, categoria ou código" aria-label="Pesquisar incidentes"><select id="filterSeverity" aria-label="Filtrar por gravidade"><option value="">Todas as gravidades</option><option>Baixo</option><option>Médio</option><option>Alto</option><option>Crítico</option></select><select id="filterStatus" aria-label="Filtrar por status"><option value="">Todos os status</option><option>Aberto</option><option>Em análise</option><option>Contido</option><option>Resolvido</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Código</th><th>Título / Tipo</th><th>Gravidade</th><th>Status</th><th>Data</th><th>Ações</th></tr></thead><tbody id="incidentTable"></tbody></table></div>
+        <div class="empty-state" id="incidentEmpty">Nenhum incidente cadastrado.</div>
+        <p class="form-error" id="listError" role="alert"></p>
+      </article>
+      <footer>CYBERGUARD <span>Plataforma Inteligente de Cibersegurança</span></footer>
+    </main>
+  </div>
+  <script type="module" src="js/incidents.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="same-origin">
+  <title>Relatórios · CYBERGUARD</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◇</span><span>CYBER<span>GUARD</span><small>INTELLIGENCE · DEFENSE · SECURITY</small></span></a><nav class="nav" aria-label="Navegação principal"><a href="index.html">▦ <span>Dashboard</span></a><a href="incidentes.html">◉ <span>Incidentes</span></a><a href="ameacas.html">⌁ <span>Ameaças</span></a><a class="active" href="relatorios.html">▤ <span>Relatórios</span></a><a href="auditoria.html">◷ <span>Auditoria</span></a></nav><div class="sidebar-bottom"><div class="profile"><div class="avatar" id="profileAvatar">CG</div><div><b id="profileName">Usuário</b><small id="profileRole">Validando sessão...</small></div></div><button class="nav-link" id="logoutBtn" type="button">↪ <span>Sair</span></button></div></aside>
+    <main class="main-content"><header class="topbar"><button class="icon-button mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu">☰</button><div class="crumb">Relatórios</div></header><section class="page-heading"><div><p class="eyebrow">ANÁLISE E EXPORTAÇÃO</p><h1>Relatórios</h1><p class="muted">Indicadores calculados a partir dos registros armazenados no servidor.</p></div><button class="button primary" id="exportCsv" type="button">Exportar CSV</button></section>
+      <section class="stats-grid" aria-label="Indicadores de relatórios"><article class="stat-card"><span>Total</span><strong id="reportTotal">0</strong></article><article class="stat-card"><span>Críticos</span><strong id="reportCritical">0</strong></article><article class="stat-card"><span>Em acompanhamento</span><strong id="reportActive">0</strong></article><article class="stat-card"><span>Resolvidos</span><strong id="reportResolved">0</strong></article></section>
+      <article class="panel"><div class="panel-heading"><div><h2>Resumo por gravidade</h2><p class="muted">Contagem calculada a partir dos registros ativos.</p></div></div><div id="reportSeverity" class="threat-list"></div><p class="empty-state" id="reportEmpty">Ainda não há dados para gerar o relatório. Registre um incidente primeiro.</p><p class="form-error" id="reportError" role="alert"></p></article><footer>CYBERGUARD <span>Plataforma Inteligente de Cibersegurança</span></footer></main>
+  </div>
+  <script type="module" src="js/reports.js"></script>
+</body>
+</html>

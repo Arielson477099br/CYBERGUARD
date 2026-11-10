@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>Solicitar cadastro · CYBERGUARD</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <a class="brand" href="login.html" aria-label="CYBERGUARD — página de acesso">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span>CYBERGUARD<small>INTELLIGENCE · DEFENSE · SECURITY</small></span>
+    </a>
+
+    <p class="eyebrow">SOLICITAÇÃO DE ACESSO</p>
+    <h1>Criar uma conta</h1>
+    <p class="muted">Preencha os dados para solicitar acesso à plataforma.</p>
+
+    <form id="registerForm" novalidate>
+      <label for="name">Nome completo</label>
+      <input id="name" name="name" type="text" autocomplete="name"
+             minlength="2" maxlength="120" required placeholder="Seu nome completo"
+             aria-describedby="registerError">
+
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email"
+             maxlength="254" required placeholder="voce@empresa.com"
+             aria-describedby="registerError">
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" autocomplete="new-password"
+             minlength="12" maxlength="128" required
+             aria-describedby="passwordHint registerError" placeholder="Crie uma senha forte">
+      <small id="passwordHint" class="hint">Mínimo de 12 caracteres e pelo menos 3 grupos: minúsculas, maiúsculas, números e símbolos.</small>
+
+      <label for="confirmPassword">Confirmar senha</label>
+      <input id="confirmPassword" name="confirmPassword" type="password"
+             autocomplete="new-password" minlength="12" maxlength="128" required
+             placeholder="Digite a senha novamente" aria-describedby="registerError">
+
+      <p class="form-error" id="registerError" role="alert" aria-live="polite"></p>
+      <p class="form-success" id="registerSuccess" role="status" aria-live="polite"></p>
+      <button class="button primary full" id="registerSubmit" type="submit">Enviar solicitação</button>
+    </form>
+
+    <p class="hint">Novas contas começam inativas e dependem de aprovação administrativa. O formulário não permite escolher o perfil de acesso.</p>
+    <p class="hint"><a href="login.html">Voltar para o login</a></p>
+  </main>
+  <script type="module" src="js/register.js"></script>
+</body>
+</html>

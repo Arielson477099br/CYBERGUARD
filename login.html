@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>Entrar · CYBERGUARD</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <a class="brand" href="login.html" aria-label="CYBERGUARD — página de acesso">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span>CYBERGUARD<small>INTELLIGENCE · DEFENSE · SECURITY</small></span>
+    </a>
+
+    <p class="eyebrow">ACESSO SEGURO</p>
+    <h1>Bem-vindo de volta</h1>
+    <p class="muted">Entre com uma conta ativa e autorizada.</p>
+
+    <form id="loginForm" novalidate>
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="username"
+             maxlength="254" required placeholder="analista@empresa.com"
+             aria-describedby="loginError">
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" autocomplete="current-password"
+             maxlength="128" required placeholder="Digite sua senha"
+             aria-describedby="loginError">
+
+      <p class="form-error" id="loginError" role="alert" aria-live="polite"></p>
+      <button class="button primary full" id="loginSubmit" type="submit">Entrar no sistema</button>
+    </form>
+
+    <p class="hint">A autenticação ocorre no servidor. Senhas e tokens de sessão não são gravados no armazenamento web do navegador.</p>
+    <p class="hint">Ainda não possui conta? <a href="cadastro.html">Solicitar cadastro</a></p>
+  </main>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

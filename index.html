@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Painel de gestão de incidentes de cibersegurança CYBERGUARD">
+  <meta name="referrer" content="same-origin">
+  <title>CYBERGUARD · Dashboard</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◇</span><span>CYBER<span>GUARD</span><small>INTELLIGENCE · DEFENSE · SECURITY</small></span></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="active" href="index.html">▦ <span>Dashboard</span></a>
+        <a href="incidentes.html">◉ <span>Incidentes</span></a>
+        <a href="ameacas.html">⌁ <span>Ameaças</span></a>
+        <a href="relatorios.html">▤ <span>Relatórios</span></a>
+        <a href="auditoria.html">◷ <span>Auditoria</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="profile"><div class="avatar" id="profileAvatar">CG</div><div><b id="profileName">Usuário</b><small id="profileRole">Validando sessão...</small></div></div>
+        <button class="nav-link" id="logoutBtn" type="button">↪ <span>Sair</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu">☰</button>
+        <div class="crumb">Visão geral <span>/ Dashboard</span></div>
+        <div class="top-actions"><span class="live-dot">● Sistema operacional</span><a class="button primary small" href="incidentes.html#novo">＋ Novo incidente</a></div>
+      </header>
+
+      <section class="page-heading">
+        <div><p class="eyebrow">CENTRO DE OPERAÇÕES DE SEGURANÇA</p><h1>Dashboard</h1><p class="muted">Visão geral dos incidentes registrados no banco de dados.</p></div>
+        <div class="date-label" id="today"></div>
+      </section>
+
+      <section class="stats-grid" aria-label="Indicadores">
+        <article class="stat-card"><div class="stat-top"><span>Total de incidentes</span><span class="stat-icon cyan">◇</span></div><strong id="totalCount">0</strong><small>Registros ativos</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Ameaças identificadas</span><span class="stat-icon violet">⌁</span></div><strong id="threatCount">0</strong><small>Categorias registradas</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Incidentes resolvidos</span><span class="stat-icon green">✓</span></div><strong id="resolvedCount">0</strong><small id="resolvedRate">0% do total</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Em acompanhamento</span><span class="stat-icon amber">◷</span></div><strong id="analysisCount">0</strong><small>Abertos, em análise ou contidos</small></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading"><div><h2>Incidentes por gravidade</h2><p class="muted">Distribuição dos registros ativos</p></div></div>
+          <div class="severity-chart" id="severityChart"><div class="empty-state">Carregando dados...</div></div>
+          <div class="chart-legend"><span><i class="dot critical"></i>Crítico</span><span><i class="dot high"></i>Alto</span><span><i class="dot medium"></i>Médio</span><span><i class="dot low"></i>Baixo</span></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><div><h2>Tipos de ameaça</h2><p class="muted">Classificação registrada</p></div><a href="ameacas.html">Explorar →</a></div>
+          <div class="threat-list" id="threatBreakdown"><div class="empty-state">Carregando categorias...</div></div>
+        </article>
+      </section>
+
+      <article class="panel table-panel">
+        <div class="panel-heading"><div><h2>Últimos incidentes</h2><p class="muted">Atividade recente registrada na plataforma</p></div><a href="incidentes.html">Abrir central de incidentes →</a></div>
+        <div class="table-wrap"><table><thead><tr><th>Código</th><th>Tipo</th><th>Título</th><th>Gravidade</th><th>Status</th><th>Data</th></tr></thead><tbody id="recentTable"></tbody></table></div>
+        <div class="empty-state" id="recentEmpty">Nenhum incidente cadastrado. Comece registrando uma ocorrência.</div>
+        <p class="form-error" id="dashboardError" role="alert"></p>
+      </article>
+      <footer>CYBERGUARD <span>Plataforma Inteligente de Cibersegurança</span></footer>
+    </main>
+  </div>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
